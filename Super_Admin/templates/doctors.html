@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors | MediCore Admin</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="dashboard">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">✚</div>
+            <div><h2>MediCore</h2><p>Hospital Management</p></div>
+        </div>
+        <p class="nav-label">MAIN MENU</p>
+        <nav>
+            <a class="nav-link" href="hospitals.html"><span class="nav-icon">▦</span> Dashboard</a>
+            <a class="nav-link" href="hospitals.html"><span class="nav-icon">✚</span> Hospitals</a>
+            <a class="nav-link active" href="doctors.html"><span class="nav-icon">⚕</span> Doctors</a>
+            <a class="nav-link" href="patients.html"><span class="nav-icon">♙</span> Patients</a>
+            <a class="nav-link" href="receptionists.html"><span class="nav-icon">♧</span> Receptionists</a>
+        </nav>
+        <div class="sidebar-bottom">
+            <strong>MediCore Admin</strong><br>
+            Static dashboard preview<br>Version 1.0
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">Dashboard / Doctors</p>
+                <h1 class="page-title">Doctor Management</h1>
+                <p class="page-subtitle">View and manage doctors registered across hospitals.</p>
+            </div>
+            <div class="user-profile">
+                <div class="avatar">SA</div>
+                <div><strong>Super Admin</strong><small>Administrator</small></div>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-label">Total Doctors</span><span class="stat-icon">⚕</span></div>
+                <div class="stat-number">864</div>
+                <p class="stat-note"><span class="positive">+8%</span> from last month</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-label">Available</span><span class="stat-icon">✓</span></div>
+                <div class="stat-number">742</div>
+                <p class="stat-note">Currently available</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-label">On Leave</span><span class="stat-icon">◷</span></div>
+                <div class="stat-number">38</div>
+                <p class="stat-note">Temporarily unavailable</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-top"><span class="stat-label">Pending Approval</span><span class="stat-icon">◎</span></div>
+                <div class="stat-number">24</div>
+                <p class="stat-note">Awaiting verification</p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <div class="card-header">
+                <div>
+                    <h2>Doctors Directory</h2>
+                    <p>Doctor profiles, departments and hospital assignments</p>
+                </div>
+                <button class="btn btn-primary">+ Add Doctor</button>
+            </div>
+
+            <div class="toolbar">
+                <input class="search-box" type="text" placeholder="Search doctors...">
+                <select class="filter-box">
+                    <option>All Specializations</option>
+                    <option>Cardiology</option>
+                    <option>Neurology</option>
+                    <option>Paediatrics</option>
+                    <option>Orthopaedics</option>
+                </select>
+                <select class="filter-box">
+                    <option>All Statuses</option>
+                    <option>Available</option>
+                    <option>On Leave</option>
+                    <option>Pending</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Doctor ID</th>
+                            <th>Specialization</th>
+                            <th>Hospital</th>
+                            <th>Experience</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="person"><div class="person-avatar">AR</div><div><strong>Dr. Anjali Raj</strong><small>anjali@example.com</small></div></div></td>
+                            <td>DOC-001</td><td>Cardiology</td><td>City Care Hospital</td><td>12 years</td>
+                            <td><span class="badge badge-success">Available</span></td>
+                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="person"><div class="person-avatar">KM</div><div><strong>Dr. Kevin Mathew</strong><small>kevin@example.com</small></div></div></td>
+                            <td>DOC-002</td><td>Neurology</td><td>Green Valley Medical</td><td>8 years</td>
+                            <td><span class="badge badge-success">Available</span></td>
+                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="person"><div class="person-avatar">SR</div><div><strong>Dr. Sneha Ramesh</strong><small>sneha@example.com</small></div></div></td>
+                            <td>DOC-003</td><td>Paediatrics</td><td>LifeCare Hospital</td><td>6 years</td>
+                            <td><span class="badge badge-warning">On Leave</span></td>
+                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
+                        </tr>
+                        <tr>
+                            <td><div class="person"><div class="person-avatar">AJ</div><div><strong>Dr. Arun Joseph</strong><small>arun@example.com</small></div></div></td>
+                            <td>DOC-004</td><td>Orthopaedics</td><td>Amala Health Centre</td><td>10 years</td>
+                            <td><span class="badge badge-info">Pending</span></td>
+                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-footer">
+                <span>Showing 4 sample doctors</span>
+                <span>Demo data only</span>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

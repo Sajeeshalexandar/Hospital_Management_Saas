@@ -1,0 +1,91 @@
+
+{% extends 'doctor_panel/base.html' %}
+
+{% block title %}Appointments{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+    <div>
+        <h1>My Appointments</h1>
+        <p>View and manage your patient appointments.</p>
+    </div>
+    <button class="primary-btn">+ New Appointment</button>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Total Today</span>
+        <h2>12</h2>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Confirmed</span>
+        <h2>06</h2>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Completed</span>
+        <h2>04</h2>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Cancelled</span>
+        <h2>02</h2>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h2>Appointment List</h2>
+        <span>Sample data</span>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>APT001</td>
+                    <td>John Mathew</td>
+                    <td>13 Oct 2026</td>
+                    <td>09:30 AM</td>
+                    <td>General checkup</td>
+                    <td><span class="status status-blue">Confirmed</span></td>
+                </tr>
+                <tr>
+                    <td>APT002</td>
+                    <td>Anu Joseph</td>
+                    <td>13 Oct 2026</td>
+                    <td>10:00 AM</td>
+                    <td>Follow-up</td>
+                    <td><span class="status status-orange">Upcoming</span></td>
+                </tr>
+                <tr>
+                    <td>APT003</td>
+                    <td>Rahul Kumar</td>
+                    <td>13 Oct 2026</td>
+                    <td>10:30 AM</td>
+                    <td>Consultation</td>
+                    <td><span class="status status-green">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>APT004</td>
+                    <td>Mary Thomas</td>
+                    <td>13 Oct 2026</td>
+                    <td>11:00 AM</td>
+                    <td>Routine checkup</td>
+                    <td><span class="status status-red">Cancelled</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+
+{% extends 'doctor_panel/base.html' %}
+
+{% block title %}My Schedule{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+    <div>
+        <h1>My Schedule</h1>
+        <p>View your working hours and availability.</p>
+    </div>
+    <button class="primary-btn">Edit Schedule</button>
+</div>
+
+<div class="panel">
+    <div class="panel-header">
+        <h2>Weekly Availability</h2>
+        <span>Sample schedule</span>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Break</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>09:00 AM</td>
+                    <td>05:00 PM</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td><span class="status status-green">Available</span></td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>09:00 AM</td>
+                    <td>05:00 PM</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td><span class="status status-green">Available</span></td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>09:00 AM</td>
+                    <td>05:00 PM</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td><span class="status status-green">Available</span></td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>09:00 AM</td>
+                    <td>05:00 PM</td>
+                    <td>01:00 PM - 02:00 PM</td>
+                    <td><span class="status status-green">Available</span></td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>09:00 AM</td>
+                    <td>01:00 PM</td>
+                    <td>None</td>
+                    <td><span class="status status-green">Available</span></td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td><span class="status status-red">Off</span></td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td><span class="status status-red">Off</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

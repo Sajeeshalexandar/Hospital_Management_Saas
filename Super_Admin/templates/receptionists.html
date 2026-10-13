@@ -1,144 +1,113 @@
 
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receptionists | MediCore Admin</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-<div class="dashboard">
-    <aside class="sidebar">
-        <div class="brand">
-            <div class="brand-logo">✚</div>
-            <div><h2>MediCore</h2><p>Hospital Management</p></div>
+{% extends 'base.html' %}
+
+{% block title %}Receptionists | MediCore{% endblock %}
+
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <p class="breadcrumb">Dashboard / Receptionists</p>
+        <h1 class="page-title">Receptionist Management</h1>
+        <p class="page-subtitle">Manage staff profiles, shifts and hospital assignments.</p>
+    </div>
+    <div class="user-profile">
+        <div class="avatar">SA</div>
+        <div><strong>Super Admin</strong><small>Administrator</small></div>
+    </div>
+</header>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Total Receptionists</span>
+        <div class="stat-number">256</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">On Duty</span>
+        <div class="stat-number">198</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">On Leave</span>
+        <div class="stat-number">18</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Pending Approval</span>
+        <div class="stat-number">12</div>
+    </div>
+</section>
+
+<section class="content-card">
+    <div class="card-header">
+        <div>
+            <h2>Receptionist Directory</h2>
+            <p>Staff details, shift schedules and hospital assignments</p>
         </div>
-        <p class="nav-label">MAIN MENU</p>
-        <nav>
-            <a class="nav-link" href="hospitals.html"><span class="nav-icon">▦</span> Dashboard</a>
-            <a class="nav-link" href="hospitals.html"><span class="nav-icon">✚</span> Hospitals</a>
-            <a class="nav-link" href="doctors.html"><span class="nav-icon">⚕</span> Doctors</a>
-            <a class="nav-link" href="patients.html"><span class="nav-icon">♙</span> Patients</a>
-            <a class="nav-link active" href="receptionists.html"><span class="nav-icon">♧</span> Receptionists</a>
-        </nav>
-        <div class="sidebar-bottom">
-            <strong>MediCore Admin</strong><br>
-            Static dashboard preview<br>Version 1.0
-        </div>
-    </aside>
+        <button class="btn btn-primary">+ Add Receptionist</button>
+    </div>
 
-    <main class="main-content">
-        <header class="topbar">
-            <div>
-                <p class="breadcrumb">Dashboard / Receptionists</p>
-                <h1 class="page-title">Receptionist Management</h1>
-                <p class="page-subtitle">View staff profiles, work shifts and hospital assignments.</p>
-            </div>
-            <div class="user-profile">
-                <div class="avatar">SA</div>
-                <div><strong>Super Admin</strong><small>Administrator</small></div>
-            </div>
-        </header>
+    <div class="toolbar">
+        <input class="search-box" type="text" placeholder="Search receptionists...">
+        <select class="filter-box">
+            <option>All Hospitals</option>
+            <option>City Care Hospital</option>
+            <option>Green Valley Medical</option>
+            <option>LifeCare Hospital</option>
+        </select>
+        <select class="filter-box">
+            <option>All Shifts</option>
+            <option>Morning</option>
+            <option>Evening</option>
+            <option>Night</option>
+        </select>
+    </div>
 
-        <section class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">Total Receptionists</span><span class="stat-icon">♧</span></div>
-                <div class="stat-number">256</div>
-                <p class="stat-note"><span class="positive">+6%</span> from last month</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">On Duty</span><span class="stat-icon">✓</span></div>
-                <div class="stat-number">198</div>
-                <p class="stat-note">Currently working</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">On Leave</span><span class="stat-icon">◷</span></div>
-                <div class="stat-number">18</div>
-                <p class="stat-note">Temporarily unavailable</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">Pending Approval</span><span class="stat-icon">◎</span></div>
-                <div class="stat-number">12</div>
-                <p class="stat-note">Awaiting verification</p>
-            </div>
-        </section>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Receptionist</th>
+                    <th>Staff ID</th>
+                    <th>Hospital</th>
+                    <th>Phone</th>
+                    <th>Shift</th>
+                    <th>Joining Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">AP</div><div><strong>Anu Priya</strong><small>anu@example.com</small></div></div></td>
+                    <td>REC-001</td><td>City Care Hospital</td><td>9895001234</td><td>Morning</td><td>12 Jan 2025</td>
+                    <td><span class="badge badge-success">On Duty</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">JM</div><div><strong>John Mathew</strong><small>john@example.com</small></div></div></td>
+                    <td>REC-002</td><td>Green Valley Medical</td><td>9895001235</td><td>Evening</td><td>20 Mar 2025</td>
+                    <td><span class="badge badge-success">On Duty</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">SR</div><div><strong>Sneha Raj</strong><small>sneha.r@example.com</small></div></div></td>
+                    <td>REC-003</td><td>LifeCare Hospital</td><td>9895001236</td><td>Night</td><td>15 Jun 2025</td>
+                    <td><span class="badge badge-warning">On Leave</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">RK</div><div><strong>Rahul Kumar</strong><small>rahul.k@example.com</small></div></div></td>
+                    <td>REC-004</td><td>City Care Hospital</td><td>9895001237</td><td>Morning</td><td>01 Oct 2026</td>
+                    <td><span class="badge badge-info">Pending</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-        <section class="content-card">
-            <div class="card-header">
-                <div>
-                    <h2>Receptionist Directory</h2>
-                    <p>Staff details, shift schedules and assigned hospitals</p>
-                </div>
-                <button class="btn btn-primary">+ Add Receptionist</button>
-            </div>
+    <div class="table-footer">
+        <span>Showing 4 sample receptionists</span>
+        <span>Demo data only</span>
+    </div>
+</section>
 
-            <div class="toolbar">
-                <input class="search-box" type="text" placeholder="Search receptionists...">
-                <select class="filter-box">
-                    <option>All Hospitals</option>
-                    <option>City Care Hospital</option>
-                    <option>Green Valley Medical</option>
-                    <option>LifeCare Hospital</option>
-                </select>
-                <select class="filter-box">
-                    <option>All Shifts</option>
-                    <option>Morning</option>
-                    <option>Evening</option>
-                    <option>Night</option>
-                </select>
-            </div>
-
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Receptionist</th>
-                            <th>Staff ID</th>
-                            <th>Hospital</th>
-                            <th>Phone</th>
-                            <th>Shift</th>
-                            <th>Joining Date</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">AP</div><div><strong>Anu Priya</strong><small>anu@example.com</small></div></div></td>
-                            <td>REC-001</td><td>City Care Hospital</td><td>9895001234</td><td>Morning</td><td>12 Jan 2025</td>
-                            <td><span class="badge badge-success">On Duty</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">JM</div><div><strong>John Mathew</strong><small>john@example.com</small></div></div></td>
-                            <td>REC-002</td><td>Green Valley Medical</td><td>9895001235</td><td>Evening</td><td>20 Mar 2025</td>
-                            <td><span class="badge badge-success">On Duty</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">SR</div><div><strong>Sneha Raj</strong><small>sneha.r@example.com</small></div></div></td>
-                            <td>REC-003</td><td>LifeCare Hospital</td><td>9895001236</td><td>Night</td><td>15 Jun 2025</td>
-                            <td><span class="badge badge-warning">On Leave</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">RK</div><div><strong>Rahul Kumar</strong><small>rahul.k@example.com</small></div></div></td>
-                            <td>REC-004</td><td>City Care Hospital</td><td>9895001237</td><td>Morning</td><td>01 Oct 2026</td>
-                            <td><span class="badge badge-info">Pending</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="table-footer">
-                <span>Showing 4 sample receptionists</span>
-                <span>Demo data only</span>
-            </div>
-        </section>
-    </main>
-</div>
-</body>
-</html>
+{% endblock %}

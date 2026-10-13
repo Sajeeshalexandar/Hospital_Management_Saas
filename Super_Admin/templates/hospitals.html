@@ -1,144 +1,106 @@
 
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospitals | MediCore Admin</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-<div class="dashboard">
+{% extends 'base.html' %}
 
-    <aside class="sidebar">
-        <div class="brand">
-            <div class="brand-logo">✚</div>
-            <div>
-                <h2>MediCore</h2>
-                <p>Hospital Management</p>
-            </div>
+{% block title %}Hospitals | MediCore{% endblock %}
+
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <p class="breadcrumb">Dashboard / Hospitals</p>
+        <h1 class="page-title">Hospital Management</h1>
+        <p class="page-subtitle">Manage hospitals across your healthcare network.</p>
+    </div>
+    <div class="user-profile">
+        <div class="avatar">SA</div>
+        <div><strong>Super Admin</strong><small>Administrator</small></div>
+    </div>
+</header>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Total Hospitals</span>
+        <div class="stat-number">128</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Active Hospitals</span>
+        <div class="stat-number">112</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Pending Approval</span>
+        <div class="stat-number">10</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Inactive Hospitals</span>
+        <div class="stat-number">6</div>
+    </div>
+</section>
+
+<section class="content-card">
+    <div class="card-header">
+        <div>
+            <h2>Registered Hospitals</h2>
+            <p>Hospital directory and registration overview</p>
         </div>
+        <button class="btn btn-primary">+ Add Hospital</button>
+    </div>
 
-        <p class="nav-label">MAIN MENU</p>
-        <nav>
-            <a class="nav-link" href="hospitals.html"><span class="nav-icon">▦</span> Dashboard</a>
-            <a class="nav-link active" href="hospitals.html"><span class="nav-icon">✚</span> Hospitals</a>
-            <a class="nav-link" href="doctors.html"><span class="nav-icon">⚕</span> Doctors</a>
-            <a class="nav-link" href="patients.html"><span class="nav-icon">♙</span> Patients</a>
-            <a class="nav-link" href="receptionists.html"><span class="nav-icon">♧</span> Receptionists</a>
-        </nav>
+    <div class="toolbar">
+        <input class="search-box" type="text" placeholder="Search hospitals...">
+        <select class="filter-box">
+            <option>All Statuses</option>
+            <option>Active</option>
+            <option>Pending</option>
+            <option>Inactive</option>
+        </select>
+    </div>
 
-        <div class="sidebar-bottom">
-            <strong>MediCore Admin</strong><br>
-            Static dashboard preview<br>
-            Version 1.0
-        </div>
-    </aside>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Hospital</th>
+                    <th>Hospital ID</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                    <th>Doctors</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">CH</div><div><strong>City Care Hospital</strong><small>General Hospital</small></div></div></td>
+                    <td>HSP-001</td><td>Trivandrum, Kerala</td><td>0471-2345678</td><td>42</td>
+                    <td><span class="badge badge-success">Active</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">GM</div><div><strong>Green Valley Medical</strong><small>Multi-speciality</small></div></div></td>
+                    <td>HSP-002</td><td>Kochi, Kerala</td><td>0484-2345678</td><td>36</td>
+                    <td><span class="badge badge-success">Active</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">LH</div><div><strong>LifeCare Hospital</strong><small>General Hospital</small></div></div></td>
+                    <td>HSP-003</td><td>Kollam, Kerala</td><td>0474-2345678</td><td>28</td>
+                    <td><span class="badge badge-warning">Pending</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">AH</div><div><strong>Amala Health Centre</strong><small>Speciality Hospital</small></div></div></td>
+                    <td>HSP-004</td><td>Thrissur, Kerala</td><td>0487-2345678</td><td>19</td>
+                    <td><span class="badge badge-danger">Inactive</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <main class="main-content">
-        <header class="topbar">
-            <div>
-                <p class="breadcrumb">Dashboard / Hospitals</p>
-                <h1 class="page-title">Hospital Management</h1>
-                <p class="page-subtitle">Manage registered hospitals across your healthcare network.</p>
-            </div>
-            <div class="user-profile">
-                <div class="avatar">SA</div>
-                <div><strong>Super Admin</strong><small>Administrator</small></div>
-            </div>
-        </header>
+    <div class="table-footer">
+        <span>Showing 4 sample hospitals</span>
+        <span>Demo data only</span>
+    </div>
+</section>
 
-        <section class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">Total Hospitals</span><span class="stat-icon">✚</span></div>
-                <div class="stat-number">128</div>
-                <p class="stat-note"><span class="positive">+12%</span> from last month</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">Active Hospitals</span><span class="stat-icon">✓</span></div>
-                <div class="stat-number">112</div>
-                <p class="stat-note">Currently operational</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">Pending Approval</span><span class="stat-icon">◷</span></div>
-                <div class="stat-number">10</div>
-                <p class="stat-note">Awaiting verification</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-top"><span class="stat-label">Inactive Hospitals</span><span class="stat-icon">⊘</span></div>
-                <div class="stat-number">6</div>
-                <p class="stat-note">Currently unavailable</p>
-            </div>
-        </section>
-
-        <section class="content-card">
-            <div class="card-header">
-                <div>
-                    <h2>Registered Hospitals</h2>
-                    <p>Hospital directory and registration overview</p>
-                </div>
-                <button class="btn btn-primary">+ Add Hospital</button>
-            </div>
-
-            <div class="toolbar">
-                <input class="search-box" type="text" placeholder="Search hospitals...">
-                <select class="filter-box">
-                    <option>All Statuses</option>
-                    <option>Active</option>
-                    <option>Pending</option>
-                    <option>Inactive</option>
-                </select>
-            </div>
-
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Hospital</th>
-                            <th>Hospital ID</th>
-                            <th>Location</th>
-                            <th>Contact</th>
-                            <th>Doctors</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">CH</div><div><strong>City Care Hospital</strong><small>General Hospital</small></div></div></td>
-                            <td>HSP-001</td><td>Trivandrum, Kerala</td><td>0471-2345678</td><td>42</td>
-                            <td><span class="badge badge-success">Active</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">GM</div><div><strong>Green Valley Medical</strong><small>Multi-speciality</small></div></div></td>
-                            <td>HSP-002</td><td>Kochi, Kerala</td><td>0484-2345678</td><td>36</td>
-                            <td><span class="badge badge-success">Active</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">LH</div><div><strong>LifeCare Hospital</strong><small>General Hospital</small></div></div></td>
-                            <td>HSP-003</td><td>Kollam, Kerala</td><td>0474-2345678</td><td>28</td>
-                            <td><span class="badge badge-warning">Pending</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                        <tr>
-                            <td><div class="person"><div class="person-avatar">AH</div><div><strong>Amala Health Centre</strong><small>Speciality Hospital</small></div></div></td>
-                            <td>HSP-004</td><td>Thrissur, Kerala</td><td>0487-2345678</td><td>19</td>
-                            <td><span class="badge badge-danger">Inactive</span></td>
-                            <td><div class="actions"><button class="action-btn">View</button><button class="action-btn">Edit</button></div></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="table-footer">
-                <span>Showing 4 sample hospitals</span>
-                <span>Demo data only</span>
-            </div>
-        </section>
-    </main>
-</div>
-</body>
-</html>
+{% endblock %}

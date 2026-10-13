@@ -1,0 +1,77 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}MediCore Admin{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Permanent Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">✚</div>
+            <div>
+                <h2 style="color: white;">MediCore</h2>
+                <p>Hospital Management</p>
+            </div>
+        </div>
+
+        <p class="nav-label">MAIN MENU</p>
+
+        <nav>
+            <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}"
+               href="{% url 'SuperAdmin_Dashboard' %}">
+                <span class="nav-icon">▦</span> Dashboard
+            </a>
+
+            <a class="nav-link {% if request.resolver_match.url_name == 'hospitals' %}active{% endif %}"
+               href="{% url 'Hospitals' %}">
+                <span class="nav-icon">✚</span> Hospitals
+            </a>
+
+            <a class="nav-link {% if request.resolver_match.url_name == 'doctors' %}active{% endif %}"
+               href="{% url 'Doctors' %}">
+                <span class="nav-icon">⚕</span> Doctors
+            </a>
+
+            <a class="nav-link {% if request.resolver_match.url_name == 'patients' %}active{% endif %}"
+               href="{% url 'Patients' %}">
+                <span class="nav-icon">♙</span> Patients
+            </a>
+
+            <a class="nav-link {% if request.resolver_match.url_name == 'receptionists' %}active{% endif %}"
+               href="{% url 'Receptionists' %}">
+                <span class="nav-icon">♧</span> Receptionists
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <strong>MediCore Admin</strong><br>
+            Hospital Management System<br>
+            Version 1.0
+        </div>
+
+    </aside>
+
+    <!-- Right-side page content -->
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</div>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

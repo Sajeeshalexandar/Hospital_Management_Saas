@@ -30,23 +30,23 @@
 
         <nav>
             <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}"
-               href="{% url 'Hospital_admin_Dashboard' %}">
+               href="{% url 'hospital_admin_Dashboard' %}">
                 <span class="nav-icon">▦</span> Dashboard
             </a>
 
 
             <a class="nav-link {% if request.resolver_match.url_name == 'doctors' %}active{% endif %}"
-               href="{% url 'Doctors' %}">
+               href="{% url 'hospital_doctors' %}">
                 <span class="nav-icon">⚕</span> Doctors
             </a>
 
             <a class="nav-link {% if request.resolver_match.url_name == 'patients' %}active{% endif %}"
-               href="{% url 'Patients' %}">
+               href="{% url 'hospital_patients' %}">
                 <span class="nav-icon">♙</span> Patients
             </a>
 
             <a class="nav-link {% if request.resolver_match.url_name == 'receptionists' %}active{% endif %}"
-               href="{% url 'Receptionists' %}">
+               href="{% url 'hospital_receptionists' %}">
                 <span class="nav-icon">♧</span> Receptionists
             </a>
         </nav>

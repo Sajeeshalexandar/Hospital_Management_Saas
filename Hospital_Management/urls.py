@@ -26,4 +26,5 @@ urlpatterns = [
     path('SuperAdmin/', include('Super_Admin.urls')),
     path('Doctor/', include('Doctor.urls')),
     path('HospitalAdmin/', include('HospitalAdmin.urls')),
+    path('Authentication/', include('Authentication.urls')),
 ]

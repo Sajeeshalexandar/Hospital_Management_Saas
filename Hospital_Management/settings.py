@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Super_Admin',
     'HospitalAdmin',
-    'Doctor'
+    'Doctor',
+    'Authentication',
+    
     ]
 
 MIDDLEWARE = [

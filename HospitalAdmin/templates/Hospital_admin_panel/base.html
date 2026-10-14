@@ -9,6 +9,7 @@
     <title>{% block title %}MediCore Admin{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/super_admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hospital_admin.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
 <body>
@@ -48,6 +49,10 @@
             <a class="nav-link {% if request.resolver_match.url_name == 'receptionists' %}active{% endif %}"
                href="{% url 'hospital_receptionists' %}">
                 <span class="nav-icon">♧</span> Receptionists
+            </a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'hospital_profile' %}active{% endif %}"
+               href="{% url 'hospital_profile' %}">
+                <span class="nav-icon">♧</span> Hospital Profile
             </a>
         </nav>
 

@@ -1,0 +1,57 @@
+
+{% extends 'Hospital_admin_panel/base.html' %}
+
+{% block title %}Dashboard | MediCore{% endblock %}
+
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <p class="breadcrumb">Main Menu / Dashboard</p>
+        <h1 class="page-title">Dashboard Overview</h1>
+        <p class="page-subtitle">
+            Welcome back! Here's an overview of your healthcare network.
+        </p>
+    </div>
+
+    <div class="user-profile">
+        <div class="avatar">SA</div>
+        <div>
+            <strong>Hospital Admin</strong>
+            <small>Administrator</small>
+        </div>
+    </div>
+</header>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-top">
+            <span class="stat-label">Total Doctors</span>
+            <span class="stat-icon">⚕</span>
+        </div>
+        <div class="stat-number">864</div>
+        <p class="stat-note"><span class="positive">+8%</span> from last month</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span class="stat-label">Total Patients</span>
+            <span class="stat-icon">♙</span>
+        </div>
+        <div class="stat-number">5,280</div>
+        <p class="stat-note"><span class="positive">+15%</span> from last month</p>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span class="stat-label">Receptionists</span>
+            <span class="stat-icon">♧</span>
+        </div>
+        <div class="stat-number">256</div>
+        <p class="stat-note">Across registered hospitals</p>
+    </div>
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,78 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}MediCore Admin{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/super_admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hospital_admin.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Permanent Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">✚</div>
+            <div>
+                <h2 style="color: white;">MediCore</h2>
+                <p>Hospital Management</p>
+            </div>
+        </div>
+
+        <p class="nav-label">MAIN MENU</p>
+
+        <nav>
+            <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}"
+               href="{% url 'hospital_admin_Dashboard' %}">
+                <span class="nav-icon">▦</span> Dashboard
+            </a>
+
+
+            <a class="nav-link {% if request.resolver_match.url_name == 'doctors' %}active{% endif %}"
+               href="{% url 'hospital_doctors' %}">
+                <span class="nav-icon">⚕</span> Doctors
+            </a>
+
+            <a class="nav-link {% if request.resolver_match.url_name == 'patients' %}active{% endif %}"
+               href="{% url 'hospital_patients' %}">
+                <span class="nav-icon">♙</span> Patients
+            </a>
+
+            <a class="nav-link {% if request.resolver_match.url_name == 'receptionists' %}active{% endif %}"
+               href="{% url 'hospital_receptionists' %}">
+                <span class="nav-icon">♧</span> Receptionists
+            </a>
+            <a class="nav-link {% if request.resolver_match.url_name == 'hospital_profile' %}active{% endif %}"
+               href="{% url 'hospital_profile' %}">
+                <span class="nav-icon">♧</span> Hospital Profile
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <strong>MediCore Admin</strong><br>
+            Hospital Management System<br>
+            Version 1.0
+        </div>
+
+    </aside>
+
+    <!-- Right-side page content -->
+    <main class="main-content">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</div>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

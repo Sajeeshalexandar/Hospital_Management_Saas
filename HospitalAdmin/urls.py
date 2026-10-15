@@ -1,10 +1,12 @@
+
 from django.urls import path
-from.import views
+from .import views
 
-urlpatterns=[
-
-    path('',views.Hospadmin_dash,name='HospitalAdmin_Dashboard'),
-    path('doctors/', views.doctors_list, name='doctors_list'),
-     path("doctors/<str:doctor_id>/",views.doctor_detail,name="doctor_detail"),
-     path("doctors/<str:doctor_id>/edit/",views.doctor_edit,name="doctor_edit"),
+urlpatterns = [
+    path('',views.Hospital_admin_Dashboard,name='hospital_admin_Dashboard'),
+    path('Doctors/',views.Doctors,name='hospital_doctors'),
+    path('Receptionists/',views.Receptionists,name='hospital_receptionists'),
+    path('Patients/',views.Patients,name='hospital_patients'),
+    path('hospital_profile/',views.hospital_profile,name='hospital_profile'),
+    path('edit_hospital_profile/',views.edit_hospital_profile,name='edit_hospital_profile'),
 ]

@@ -1,0 +1,107 @@
+
+{% extends 'Hospital_admin_panel/base.html' %}
+
+{% block title %}Patients | MediCore{% endblock %}
+
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <p class="breadcrumb">Dashboard / Patients</p>
+        <h1 class="page-title">Patient Management</h1>
+        <p class="page-subtitle">Manage patient registrations and hospital records.</p>
+    </div>
+    <div class="user-profile">
+        <div class="avatar">SA</div>
+        <div><strong>Hospital Management</strong><small>Administrator</small></div>
+    </div>
+</header>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Total Patients</span>
+        <div class="stat-number">5,280</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">New Registrations</span>
+        <div class="stat-number">186</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Appointments Today</span>
+        <div class="stat-number">324</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Active Records</span>
+        <div class="stat-number">4,912</div>
+    </div>
+</section>
+
+<section class="content-card">
+    <div class="card-header">
+        <div>
+            <h2>Patients Directory</h2>
+            <p>Patient information and hospital assignments</p>
+        </div>
+        <button class="btn btn-primary">+ Add Patient</button>
+    </div>
+
+    <div class="toolbar">
+        <input class="search-box" type="text" placeholder="Search patients...">
+        <select class="filter-box">
+            <option>All Hospitals</option>
+            <option>City Care Hospital</option>
+            <option>Green Valley Medical</option>
+            <option>LifeCare Hospital</option>
+        </select>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient</th>
+                    <th>Patient ID</th>
+                    <th>Age / Gender</th>
+                    <th>Phone</th>
+                    <th>Hospital</th>
+                    <th>Registered On</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">AK</div><div><strong>Arun Kumar</strong><small>arun@example.com</small></div></div></td>
+                    <td>PAT-001</td><td>35 / Male</td><td>9876543210</td><td>City Care Hospital</td><td>05 Oct 2026</td>
+                    <td><span class="badge badge-success">Active</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">MS</div><div><strong>Meera Suresh</strong><small>meera@example.com</small></div></div></td>
+                    <td>PAT-002</td><td>28 / Female</td><td>9876543211</td><td>Green Valley Medical</td><td>06 Oct 2026</td>
+                    <td><span class="badge badge-success">Active</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">RJ</div><div><strong>Rahul Joseph</strong><small>rahul@example.com</small></div></div></td>
+                    <td>PAT-003</td><td>46 / Male</td><td>9876543212</td><td>LifeCare Hospital</td><td>07 Oct 2026</td>
+                    <td><span class="badge badge-success">Active</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">AN</div><div><strong>Anjali Nair</strong><small>anjali.n@example.com</small></div></div></td>
+                    <td>PAT-004</td><td>19 / Female</td><td>9876543213</td><td>City Care Hospital</td><td>08 Oct 2026</td>
+                    <td><span class="badge badge-danger">Inactive</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-footer">
+        <span>Showing 4 sample patients</span>
+        <span>Demo data only</span>
+    </div>
+</section>
+
+{% endblock %}

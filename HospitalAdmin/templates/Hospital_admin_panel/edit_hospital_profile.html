@@ -1,0 +1,251 @@
+
+{% extends 'Hospital_admin_panel/base.html' %}
+
+{% block title %}Edit Hospital Profile{% endblock %}
+
+{% block content %}
+
+<div class="page-heading">
+    <div>
+        <h1>Edit Hospital Profile</h1>
+        <p>Update your hospital information and contact details.</p>
+    </div>
+
+    <a href="{% url 'hospital_profile' %}" class="primary-btn">
+        ← Back to Profile
+    </a>
+</div>
+
+<!-- Hospital Information -->
+<div class="panel">
+
+    <div class="panel-header">
+        <div>
+            <h2>Hospital Information</h2>
+            <p style="margin-top: 6px; color: #78859a; font-size: 12px;">
+                Update the basic information about your hospital.
+            </p>
+        </div>
+
+        <span class="status status-green">Active</span>
+    </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Hospital Logo -->
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="hospital_name">Hospital Name *</label>
+                <input
+                    type="text"
+                    id="hospital_name"
+                    name="hospital_name"
+                    value="MediCore General Hospital"
+                    placeholder="Enter hospital name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="hospital_type">Hospital Type *</label>
+                <select id="hospital_type" name="hospital_type" required>
+                    <option value="">Select hospital type</option>
+                    <option value="General" selected>General Hospital</option>
+                    <option value="Multi-specialty">Multi-specialty Hospital</option>
+                    <option value="Specialty">Specialty Hospital</option>
+                    <option value="Clinic">Clinic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="hospital_email">Hospital Email *</label>
+                <input
+                    type="email"
+                    id="hospital_email"
+                    name="hospital_email"
+                    value="hospital@example.com"
+                    placeholder="Enter hospital email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="hospital_phone">Contact Number *</label>
+                <input
+                    type="tel"
+                    id="hospital_phone"
+                    name="hospital_phone"
+                    value="04712345678"
+                    placeholder="Enter contact number"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="hospital_website">Website</label>
+                <input
+                    type="url"
+                    id="hospital_website"
+                    name="hospital_website"
+                    placeholder="https://www.example.com"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="hospital_logo">Hospital Logo</label>
+                <input
+                    type="file"
+                    id="hospital_logo"
+                    name="hospital_logo"
+                    accept="image/*"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="registration_number">Registration Number</label>
+                <input
+                    type="text"
+                    id="registration_number"
+                    name="registration_number"
+                    value="HOSP001"
+                    placeholder="Enter registration number"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="established_year">Established Year</label>
+                <input
+                    type="number"
+                    id="established_year"
+                    name="established_year"
+                    min="1800"
+                    max="2100"
+                    placeholder="e.g. 2010"
+                >
+            </div>
+
+        </div>
+
+        <!-- Address Information -->
+        <div class="panel-header">
+            <h2>Address Information</h2>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="address">Street Address *</label>
+                <textarea
+                    id="address"
+                    name="address"
+                    placeholder="Enter street address"
+                    required
+                >Thiruvananthapuram, Kerala, India</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City *</label>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    value="Thiruvananthapuram"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="state">State *</label>
+                <input
+                    type="text"
+                    id="state"
+                    name="state"
+                    value="Kerala"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="pincode">PIN Code *</label>
+                <input
+                    type="text"
+                    id="pincode"
+                    name="pincode"
+                    value=""
+                    maxlength="6"
+                    pattern="[0-9]{6}"
+                    placeholder="Enter 6-digit PIN code"
+                    required
+                >
+            </div>
+
+        </div>
+
+        <!-- Administrator Information -->
+        <div class="panel-header">
+            <h2>Hospital Administrator</h2>
+        </div>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="admin_name">Administrator Name *</label>
+                <input
+                    type="text"
+                    id="admin_name"
+                    name="admin_name"
+                    value="Alex Thomas"
+                    placeholder="Enter administrator name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="admin_email">Administrator Email *</label>
+                <input
+                    type="email"
+                    id="admin_email"
+                    name="admin_email"
+                    value="admin@example.com"
+                    placeholder="Enter administrator email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="admin_phone">Administrator Phone</label>
+                <input
+                    type="tel"
+                    id="admin_phone"
+                    name="admin_phone"
+                    placeholder="Enter phone number"
+                >
+            </div>
+
+        </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions edit-profile-actions">
+
+            <a href="{% url 'hospital_profile' %}"
+               class="cancel-btn">
+                Cancel
+            </a>
+
+            <button type="reset" class="reset-btn">
+                Reset
+            </button>
+
+            <button type="submit" class="primary-btn">
+                Save Changes
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

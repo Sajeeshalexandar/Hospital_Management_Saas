@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Super_Admin',
-    'HospitalAdmin']
+    'HospitalAdmin',
+    'Doctor',
+    'Authentication',
+    
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

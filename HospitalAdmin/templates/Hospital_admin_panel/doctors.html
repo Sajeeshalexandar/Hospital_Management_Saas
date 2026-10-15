@@ -1,0 +1,107 @@
+
+{% extends 'Hospital_admin_panel/base.html' %}
+
+{% block title %}Doctors | MediCore{% endblock %}
+
+{% block content %}
+
+<header class="topbar">
+    <div>
+        <p class="breadcrumb">Dashboard / Doctors</p>
+        <h1 class="page-title">Doctor Management</h1>
+        <p class="page-subtitle">Manage doctor profiles and hospital assignments.</p>
+    </div>
+    <div class="user-profile">
+        <div class="avatar">SA</div>
+        <div><strong>Hospital Management</strong><small>Administrator</small></div>
+    </div>
+</header>
+
+<section class="stats-grid">
+    <div class="stat-card">
+        <span class="stat-label">Total Doctors</span>
+        <div class="stat-number">864</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Available</span>
+        <div class="stat-number">742</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">On Leave</span>
+        <div class="stat-number">38</div>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Pending Approval</span>
+        <div class="stat-number">24</div>
+    </div>
+</section>
+
+<section class="content-card">
+    <div class="card-header">
+        <div>
+            <h2>Doctors Directory</h2>
+            <p>Doctor profiles and specializations</p>
+        </div>
+        <button class="btn btn-primary">+ Add Doctor</button>
+    </div>
+
+    <div class="toolbar">
+        <input class="search-box" type="text" placeholder="Search doctors...">
+        <select class="filter-box">
+            <option>All Specializations</option>
+            <option>Cardiology</option>
+            <option>Neurology</option>
+            <option>Paediatrics</option>
+            <option>Orthopaedics</option>
+        </select>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Doctor</th>
+                    <th>Doctor ID</th>
+                    <th>Specialization</th>
+                    <th>Hospital</th>
+                    <th>Experience</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">AR</div><div><strong>Dr. Anjali Raj</strong><small>anjali@example.com</small></div></div></td>
+                    <td>DOC-001</td><td>Cardiology</td><td>City Care Hospital</td><td>12 years</td>
+                    <td><span class="badge badge-success">Available</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">KM</div><div><strong>Dr. Kevin Mathew</strong><small>kevin@example.com</small></div></div></td>
+                    <td>DOC-002</td><td>Neurology</td><td>Green Valley Medical</td><td>8 years</td>
+                    <td><span class="badge badge-success">Available</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">SR</div><div><strong>Dr. Sneha Ramesh</strong><small>sneha@example.com</small></div></div></td>
+                    <td>DOC-003</td><td>Paediatrics</td><td>LifeCare Hospital</td><td>6 years</td>
+                    <td><span class="badge badge-warning">On Leave</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+                <tr>
+                    <td><div class="person"><div class="person-avatar">AJ</div><div><strong>Dr. Arun Joseph</strong><small>arun@example.com</small></div></div></td>
+                    <td>DOC-004</td><td>Orthopaedics</td><td>Amala Health Centre</td><td>10 years</td>
+                    <td><span class="badge badge-info">Pending</span></td>
+                    <td><button class="action-btn">View</button> <button class="action-btn">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-footer">
+        <span>Showing 4 sample doctors</span>
+        <span>Demo data only</span>
+    </div>
+</section>
+
+{% endblock %}
